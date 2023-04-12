@@ -36,6 +36,7 @@ public class Ticking extends Thread {
                     task.run(currentTick);
                 }));
                 tasks.removeIf(Task::isCanceled);
+                tasks.removeIf((task -> task.getType() == Task.Type.ONE_TIME));
             }
 
             try {

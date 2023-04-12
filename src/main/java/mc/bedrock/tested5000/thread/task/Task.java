@@ -6,6 +6,8 @@ public abstract class Task {
 
     private @Getter boolean isCanceled = false;
 
+    private @Getter Type type = Type.ONE_TIME;
+
     public abstract void run(long currentTick);
 
     /**
@@ -15,6 +17,14 @@ public abstract class Task {
      */
     public final void cancel() {
         isCanceled = true;
+    }
+
+    public enum Type {
+
+        REPEATABLE,
+        ONE_TIME
+
+
     }
 
 }

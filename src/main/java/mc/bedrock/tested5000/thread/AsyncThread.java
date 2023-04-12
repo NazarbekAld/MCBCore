@@ -7,7 +7,9 @@ import lombok.Getter;
 import mc.bedrock.tested5000.logger.Logger;
 import mc.bedrock.tested5000.thread.task.AsyncTask;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class AsyncThread extends Thread {
@@ -40,6 +42,7 @@ public class AsyncThread extends Thread {
             }));
 
             tasks.removeIf(AsyncTask::isCanceled);
+            tasks.removeIf(asyncTask -> asyncTask.getType() == AsyncTask.Type.ONE_TIME);
 
         }
     }

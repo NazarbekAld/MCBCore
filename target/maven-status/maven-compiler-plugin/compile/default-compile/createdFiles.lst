@@ -1,0 +1,4 @@
+mc\bedrock\tested5000\App.class
+mc\bedrock\tested5000\logger\Logger.class
+mc\bedrock\tested5000\logger\Logger$LoggerBuilder.class
+mc\bedrock\tested5000\logger\LoggerWithThisOwnerExistException.class
